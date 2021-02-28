@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+    <style>
+
+    *{
+    margin: 0;
+    padding: 0;
+    }
+
+    header, footer{
+    background: orange;
+    }
+
+    body {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+   }
+
+    main, header, footer{
+    text-align: center;
+    }
+
+    form{
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em
+    }
+
+    #button_book, #to_result, #label_title, #label_author{
+    float: left;
+    }
+
+    #button_book{
+    position: relative;
+    top: 10px;
+    }
+
+    footer{
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    margin-top: 100px;
+    }
+
+    header{
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    margin-bottom: 50px;
+    }
+
+    main{
+    width: 50%;
+    margin-left: 15%;
+    }
+
+    </style>
+</head>
+
+<body>
+
+<header id="header">
+    <h1>Main page</h1>
+</header>
+
+<main>
+
+    <nav><a href="/Res" style="font-size: 130%" id="to_result"> To result</a></nav>
+
+    <form method="post" style="font-size: 130%; font-weight: 700;" >
+
+        <label for="author" id="label_author">Author</label>
+        <input type="text" name="author" id="author" style="font-size: 100%; font-weight: 500">
+
+        <label for="author" id="label_title">title</label>
+        <input type="text" name="title" id="title" style="font-size: 100%; font-weight: 500">
+        <button type="submit" style="font-size: 100%; font-weight: 700" id="button_book" > Send </button>
+
+    </form>
+</main>
+
+<footer id="footer">
+    <p style="font-size: 160%; font-weight: 700">Подвал Сайта</p>
+</footer>
+
+</body>
+</html>
