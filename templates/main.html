@@ -1,91 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Main</title>
-    <style>
+<html>
+    <head>
+        <title>
+            Главная страница
+        </title>
+        <meta charset="UTF-8">
+        <link type="text/css" href="{{url_for('static', filename='main.css')}}" rel="stylesheet">
+    </head>
 
-    *{
-    margin: 0;
-    padding: 0;
-    }
+    <body>
+        <!--Шапка сайта-->
+        <div id="div_header" class="div_header">
+            <h1>Главная страница</h1>
+        </div>
 
-    header, footer{
-    background: orange;
-    }
+        <!--Тело сайта-->
+        <div id="div_body" class="div_body">
+            <p>
+                Этот сайт был создан для проведения нагрузочного тестирования в целях обучения!
+                Вскоре будет написана документация, процесс реализации этого проекта и итоговые результаты (ссылку на профиль вы найдете ниже).
+            </p>
 
-    body {
-    font-family: Geneva, Arial, Helvetica, sans-serif;
-   }
+            <form method="post">
+                <li>
+                <label for="author" id="label_author">Автор</label>
+                <input id="author" name="author" type="text"
+                placeholder="Введите Фамилию и И.О. автора"
+                maxlength="30">
+                </li>
 
-    main, header, footer{
-    text-align: center;
-    }
+                <li>
+                <label for="title" id="label_title">Название</label>
+                <input id="title" type="text" name="title"
+                placeholder="Введите название книги" 
+                maxlength="40">
+                </li>
 
-    form{
-    margin-left: auto;
-    margin-right: auto;
-    width: 6em
-    }
+                <li>
+                <label for="isbn" id="label_isbn">ISBN</label>
+                <input id="isbn" type="text" name="isbn"
+                placeholder="Введите ISBN" 
+                maxlength="13">
+                </li>
 
-    #button_book, #to_result, #label_title, #label_author{
-    float: left;
-    }
+                <input type="submit" value="Готово!">
+                <input type="reset" value="Очистить!">
+            </form>
+        </div>
 
-    #button_book{
-    position: relative;
-    top: 10px;
-    }
+        <!--Подвал сайта-->
+        <div id="div_footer" class="div_footer">
+            <li>
+                <a href="https://github.com/Ulukbek-Toychuev">Мой профиль в GitHub.</a>
+            </li>
 
-    footer{
-    width: 100%;
-    height: 60px;
-    text-align: center;
-    line-height: 60px;
-    margin-top: 100px;
-    }
-
-    header{
-    width: 100%;
-    height: 60px;
-    text-align: center;
-    line-height: 60px;
-    margin-bottom: 50px;
-    }
-
-    main{
-    width: 50%;
-    margin-left: 15%;
-    }
-
-    </style>
-</head>
-
-<body>
-
-<header id="header">
-    <h1>Main page</h1>
-</header>
-
-<main>
-
-    <nav><a href="/Res" style="font-size: 130%" id="to_result"> To result</a></nav>
-
-    <form method="post" style="font-size: 130%; font-weight: 700;" >
-
-        <label for="author" id="label_author">Author</label>
-        <input type="text" name="author" id="author" style="font-size: 100%; font-weight: 500">
-
-        <label for="author" id="label_title">title</label>
-        <input type="text" name="title" id="title" style="font-size: 100%; font-weight: 500">
-        <button type="submit" style="font-size: 100%; font-weight: 700" id="button_book" > Send </button>
-
-    </form>
-</main>
-
-<footer id="footer">
-    <p style="font-size: 160%; font-weight: 700">Подвал Сайта</p>
-</footer>
-
-</body>
+            <li>    
+                <a href="mailto:t.ulukbek01@gmail.com">Моя почта.</a>
+            </li>
+        </div>
+    </body>
 </html>
