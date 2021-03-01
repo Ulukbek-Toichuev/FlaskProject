@@ -11,6 +11,7 @@ class Book(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     author = db.Column(db.String(80), nullable=False)
     title = db.Column(db.String(80), nullable=False)
+    isbn = db.Column(db.String(13), nullable=False)
 
     def __repr__(self):
         return '<Book %r>' % self.id
@@ -27,8 +28,9 @@ def index():
     if request.method == 'POST':
         title = request.form['title']
         author = request.form['author']
+        isbn = request.form['isbn']
 
-        book = Book(title=title, author=author)
+        book = Book(title=title, author=author, isbn=isbn)
 
         try:
             db.session.add(book)
