@@ -14,28 +14,28 @@ class Book(db.Model):
     isbn = db.Column(db.String(13), nullable=False)
 
     def __repr__(self):
-        return '<Book %r>' % self.id
+        return f"<Book {self.id}>"
 
 
 @app.route('/Res')
 def result():
     books = Book.query.all()
-    return render_template('result.html', books = books)
+    return render_template('result.html', books=books)
 
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
     if request.method == 'POST':
-        title = request.form['title']
-        author = request.form['author']
-        isbn = request.form['isbn']
-
-        book = Book(title=title, author=author, isbn=isbn)
+        t = request.form['title']
+        a = request.form['author']
+        i = request.form['isbn']
+        book = Book(title=t, author=a, isbn=i)
 
         try:
             db.session.add(book)
             db.session.commit()
-            return redirect('/Res')
+            return redirect('/')
+
         except:
             return "Error!"
 
