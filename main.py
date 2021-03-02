@@ -11,16 +11,30 @@ class Book(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     author = db.Column(db.String(80), nullable=False)
     title = db.Column(db.String(80), nullable=False)
-    isbn = db.Column(db.String(13), nullable=False)
+    isbn = db.Column(db.String(17), nullable=False)
 
     def __repr__(self):
         return f"<Book {self.id}>"
 
 
-@app.route('/Res')
+@app.route('/result')
 def result():
     books = Book.query.all()
+    
     return render_template('result.html', books=books)
+
+@app.route('/delete/<int:id>/')
+def delete(id):
+    task_to_delete = Book.query.get_or_404(id)
+
+    try:
+        db.session.delete(task_to_delete)
+        db.session.commit()
+        return redirect('/result')
+    except:
+        return 'Error!'    
+
+
 
 
 @app.route('/', methods=['POST', 'GET'])
@@ -34,7 +48,7 @@ def index():
         try:
             db.session.add(book)
             db.session.commit()
-            return redirect('/')
+            return redirect('result')
 
         except:
             return "Error!"

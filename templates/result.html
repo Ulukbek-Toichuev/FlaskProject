@@ -5,7 +5,7 @@
             Все книги
         </title>
         <meta charset="UTF-8">
-        <link type="text/css" rel="stylesheet" href="{{url_for('static', filename='res.css')}}">
+        <link type="text/css" href="{{url_for('static', filename='res.css', v=1)}}" rel="stylesheet" >
     </head>
 
     <body>
@@ -19,9 +19,10 @@
             {% for el in books %}
 
             <div id="res_body" class="res_body">
-                <h2>{{ el.title }}</h2>
+                <h3>{{ el.title }}</h3>
                 <p>Автор: {{el.author}}</p>
                 <p>ISBN: {{el.isbn}}</p>
+                <a href="/delete/{{el.id}}"> Delete </a>
             </div>
 
             {% endfor %}
@@ -30,11 +31,15 @@
         <!--Подвал сайта-->
         <div id="div_footer" class="div_footer">
             <li>
-                <a href="https://github.com/Ulukbek-Toychuev">Мой профиль в GitHub.</a>
+                <a href="https://github.com/Ulukbek-Toychuev" id="git_link">Мой профиль в GitHub.</a>
             </li>
 
             <li>
-                <a href="mailto:t.ulukbek01@gmail.com">Моя почта.</a>
+                <a href="mailto:t.ulukbek01@gmail.com" id="mail_link">Моя почта.</a>
+            </li>
+
+            <li>
+                <a href="/" id="main_link">Вернуться на главную</a>
             </li>
         </div>
     </body>

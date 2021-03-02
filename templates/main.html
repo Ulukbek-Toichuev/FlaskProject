@@ -3,9 +3,10 @@
     <head>
         <title>
             Главная страница
+        
         </title>
         <meta charset="UTF-8">
-        <link type="text/css" href="{{url_for('static', filename='main.css')}}" rel="stylesheet">
+        <link type="text/css" href="{{url_for('static', filename='main.css', v=1)}}" rel="stylesheet">
     </head>
 
     <body>
@@ -16,36 +17,67 @@
 
         <!--Тело сайта-->
         <div id="div_body" class="div_body">
-            <p>
-                Этот сайт был создан для проведения нагрузочного тестирования в целях обучения!
-                Вскоре будет написана документация, процесс реализации этого проекта и итоговые результаты (ссылку на профиль вы найдете ниже).
-            </p>
+            
+            <div id="paragraph_aside" class="paragraph">
+                <p id="p_text">
+                    Этот сайт был создан для проведения нагрузочного тестирования в целях обучения!
+                    Вскоре будет написана документация, процесс реализации этого проекта и итоговые результаты (ссылку на профиль вы найдете ниже).
+                </p>
+            </div>
 
-            <form method="post">
-                <li>
-                <label id="label_author">Автор</label>
-                <input name="author" type="text"
-                placeholder="Введите Фамилию и Имя автора"
-                maxlength="30">
-                </li>
+            <div id="main_body" class="main_body">
+                <form method="post">
+                    <li>                
+                        
+                        <label id="label_author">Автор</label>
+                        
+                        <input name="author" type="text"
+                        
+                        placeholder="Введите Фамилию и Имя автора"
+                        
+                        maxlength="30">
+                    
+                    </li>
 
-                <li>
-                <label id="label_title">Название</label>
-                <input name="title" type="text"
-                placeholder="Введите название книги" 
-                maxlength="40">
-                </li>
+                
+                    <li>
+                
+                        <label id="label_title">Название</label>
+                
+                        <input name="title" type="text"
+                
+                        placeholder="Введите название книги" 
+                
+                        maxlength="40">
+                
+                    </li>
 
-                <li>
-                <label id="label_isbn">ISBN</label>
-                <input name="isbn" type="text"
-                placeholder="Введите ISBN" 
-                maxlength="13">
-                </li>
+                
+                    <li>
+                
+                        <label id="label_isbn">ISBN</label>
+                
+                        <input name="isbn" type="text"
+                
+                        placeholder="Введите ISBN" 
+                
+                        maxlength="17">
+                
+                    </li>
 
-                <input type="submit" value="Готово!">
-                <input type="reset" value="Очистить!">
-            </form>
+                
+                    <input type="submit" value="Готово!">
+                
+                    <input type="reset" value="Очистить!">
+            
+                </form>
+
+                <div id="link_body">
+                    <a href="result" id="a_link"> Посмотреть все книги </a>
+                </div>
+        
+            </div>
+        
         </div>
 
         <!--Подвал сайта-->
